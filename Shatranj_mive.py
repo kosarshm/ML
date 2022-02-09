@@ -12,18 +12,13 @@ for i in v:
         result_acceptable.append(1)
         result_names.append(i['name'])
 
-#print(result_names)
-#print(result_acceptable)
-
 result_list = list(zip(result_names, result_acceptable))
-#print(result_list)
 
-count_map = {}
-for i in result_list:
-    count_map[i] = count_map.get(i, 0) + 1
-print(count_map)
+result_dict = {}
 
-#dict2 = {k: v for k, v in count_map.items()}
-#print(dict2)
-
-#solution = {'apple': 2, 'lemon': 1}
+for i in result_names:
+    a = result_list.count((i, 1))
+    if a != 0:
+        result_dict.update({i: a})
+        
+print(result_dict)
